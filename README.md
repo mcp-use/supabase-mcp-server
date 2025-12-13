@@ -1,5 +1,7 @@
 # Supabase MCP Server
 
+![Supabase MCP Server](screen.png)
+
 A powerful Model Context Protocol (MCP) server for Supabase, **built with [mcp-use](https://github.com/mcp-use/mcp-use)**. This server provides interactive tools and beautiful React widgets for exploring and querying your Supabase database.
 
 ## 🚀 Built with mcp-use
