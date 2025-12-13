@@ -1,16 +1,105 @@
 @import "tailwindcss";
-@import "@openai/apps-sdk-ui/css";
+/* @import "@openai/apps-sdk-ui/css"; */
 
 /* Configure Tailwind v4 to scan for classes */
-@source "../node_modules/@openai/apps-sdk-ui";
+/* @source "../node_modules/@openai/apps-sdk-ui"; */
 @source "./**/*.{ts,tsx,js,jsx,html}";
 
 @theme {
   /* Enable class-based dark mode */
   --color-scheme: light dark;
+  
+  /* Supabase Design System - Spacing & Sizing */
+  --spacing-scale: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  
+  /* Border Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Brand Colors */
+  --brand-primary: 153.1deg 60.2% 52.7%;
+  --brand-accent: 152.9deg 56.1% 46.5%;
+  
+  /* Text Color Utilities */
+  --color-foreground: hsl(var(--foreground));
+  --color-foreground-light: hsl(var(--foreground-light));
+  --color-foreground-lighter: hsl(var(--foreground-lighter));
+  --color-foreground-muted: hsl(var(--foreground-muted));
 }
 
 @variant dark (&:where(.dark, .dark *));
+
+/* Supabase Design System CSS Variables */
+:root {
+  /* Light mode colors */
+  --background: 0 0% 100%;
+  --background-surface: 0 0% 98.8%;
+  --background-overlay: 0 0% 97.3%;
+  --background-muted: 0 0% 95.3%;
+  
+  --foreground: 0 0% 9%;
+  --foreground-light: 0 0% 43.5%;
+  --foreground-lighter: 0 0% 52.2%;
+  --foreground-muted: 0 0% 56.1%;
+  
+  --border: 0 0% 91%;
+  --border-strong: 0 0% 88.6%;
+  --border-stronger: 0 0% 85.9%;
+  
+  --brand: 153.1deg 60.2% 52.7%;
+  --brand-300: 153.1deg 60.2% 57.7%;
+  --brand-400: 153.1deg 60.2% 52.7%;
+  --brand-500: 152.9deg 56.1% 46.5%;
+  --brand-600: 152.9deg 56.1% 42%;
+  
+  --destructive: 0 72% 51%;
+  --destructive-500: 0 72% 51%;
+  --destructive-600: 0 72% 45%;
+  
+  --warning: 45 93% 47%;
+  --warning-500: 45 93% 47%;
+  
+  --success: 153.1deg 60.2% 52.7%;
+}
+
+.dark {
+  /* Dark mode colors */
+  --background: 0 0% 8.6%;
+  --background-surface: 0 0% 11%;
+  --background-overlay: 0 0% 13.7%;
+  --background-muted: 0 0% 15.7%;
+  
+  --foreground: 0 0% 92.9%;
+  --foreground-light: 0 0% 62.7%;
+  --foreground-lighter: 0 0% 49.4%;
+  --foreground-muted: 0 0% 43.9%;
+  
+  --border: 0 0% 18%;
+  --border-strong: 0 0% 20.4%;
+  --border-stronger: 0 0% 24.3%;
+  
+  --brand: 153.1deg 60.2% 52.7%;
+  --brand-400: 153.1deg 60.2% 52.7%;
+  --brand-500: 152.9deg 56.1% 46.5%;
+  --brand-600: 152.9deg 56.1% 42%;
+  
+  --destructive: 0 72% 51%;
+  --destructive-500: 0 72% 51%;
+  --destructive-600: 0 72% 45%;
+  
+  --warning: 45 93% 57%;
+  --warning-500: 45 93% 47%;
+  
+  --success: 153.1deg 60.2% 52.7%;
+}
 
 /* Custom styles */
 body {
@@ -20,23 +109,6 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply text-default;
-}
-
-p {
-  @apply text-secondary;
-}
-
-a {
-  @apply text-info;
 }
 
 /* Carousel scroll container with padding for blur effect */
