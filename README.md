@@ -43,7 +43,7 @@ Set the following required environment variables:
 # Required: Your Supabase Personal Access Token
 export ACCESS_TOKEN="your-access-token"
 
-# Required: Content Security Policy URLs for widget loading
+# Required: Content Security Policy URLs for widget loading => required by ChatGPT
 export CSP_URLS="https://supabase.com,https://mcp.supabase.com,https://*.mcp-use.com,https://*.supabase.co"
 ```
 
