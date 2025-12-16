@@ -26,6 +26,13 @@ export const widgetMetadata: WidgetMetadata = {
     "Display Supabase service status and recent incidents from the status page",
   props: propSchema,
   exposeAsTool: true,
+  annotations: { readOnlyHint: true },
+  appsSdkMetadata: {
+    "openai/widgetCSP": {
+      connect_domains: ["https://status.supabase.com"],
+      resource_domains: ["https://*.supabase.com"],
+    },
+  },
 };
 
 interface Incident {
