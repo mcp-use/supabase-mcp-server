@@ -1,13 +1,21 @@
 import { ExternalLink } from "lucide-react";
 import { McpUseProvider, useWidget, type WidgetMetadata } from "mcp-use/react";
 import React from "react";
+import z from "zod/v4";
 import { DataTable } from "../components/DataTable";
 import { Supabase } from "../components/logo";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import "../styles.css";
-import type { TableViewerProps } from "./types";
-import { propSchema } from "./types";
+
+const propSchema = z.object({
+  tableName: z.string().describe("Name of the table"),
+  schema: z.string().default("public").describe("Schema name"),
+  rows: z.array(z.record(z.string(), z.any())).describe("Array of row data"),
+  columns: z.array(z.string()).describe("Column names"),
+  totalRows: z.number().optional().describe("Total number of rows"),
+  projectRef: z.string().optional().describe("Supabase project reference ID"),
+});
 
 export const widgetMetadata: WidgetMetadata = {
   description: "Display table data in a formatted table view",
@@ -16,7 +24,7 @@ export const widgetMetadata: WidgetMetadata = {
 };
 
 const TableViewerWidget: React.FC = () => {
-  const { props, isPending } = useWidget<TableViewerProps>();
+  const { props, isPending } = useWidget<z.infer<typeof propSchema>>();
 
   const supabaseTableUrl = props.projectRef
     ? `https://supabase.com/dashboard/project/${props.projectRef}/editor/${props.tableName}`

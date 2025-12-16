@@ -36,7 +36,7 @@
     "dayjs": "^1.11.19",
     "express": "^5.2.0",
     "lucide-react": "^0.555.0",
-    "mcp-use": "workspace:*",
+    "mcp-use": "canary",
     "node-mocks-http": "^1.17.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

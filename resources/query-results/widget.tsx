@@ -2,13 +2,26 @@ import { McpUseProvider, useWidget, type WidgetMetadata } from "mcp-use/react";
 import React, { useEffect, useMemo, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import z from "zod/v4";
 import { DataTable } from "../components/DataTable";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import "../styles.css";
-import type { QueryResultsProps } from "./types";
-import { propSchema } from "./types";
+
+const propSchema = z.object({
+  query: z.string().default("").describe("The SQL query that was executed"),
+  results: z
+    .array(z.record(z.string(), z.any()))
+    .default([])
+    .describe("Query results as array of objects"),
+  projectRef: z.string().default("").describe("Project reference ID"),
+  projectName: z.string().default("").describe("Project name"),
+  rowCount: z.number().default(0).describe("Number of rows returned"),
+  tableName: z.string().optional().describe("Table name if previewing a table"),
+});
+
+type QueryResultsProps = z.infer<typeof propSchema>;
 
 export const widgetMetadata: WidgetMetadata = {
   description:

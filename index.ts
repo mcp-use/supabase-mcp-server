@@ -1,12 +1,12 @@
-import { MCPClient } from "mcp-use/client";  // No langchain!
+import { MCPClient } from "mcp-use/client"; // No langchain!
 import { error, MCPServer, object, text, widget } from "mcp-use/server";
 import z from "zod/v4";
 // Get Supabase Personal Access Token from environment
-const SUPABASE_ACCESS_TOKEN = process.env.SUPABASE_ACCESS_TOKEN;
+const SUPABASE_ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 if (!SUPABASE_ACCESS_TOKEN) {
   throw new Error(
-    "Missing SUPABASE_ACCESS_TOKEN environment variable.\n" +
+    "Missing ACCESS_TOKEN environment variable.\n" +
     "Generate one at: https://supabase.com/dashboard/account/tokens"
   );
 }
