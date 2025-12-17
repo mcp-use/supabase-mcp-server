@@ -56,7 +56,7 @@ type Table = z.infer<typeof tableSchema>;
 
 export const widgetMetadata: WidgetMetadata = {
   description: "Explore database schema with tables, columns, and data types",
-  inputs: propSchema,
+  props: propSchema,
   exposeAsTool: false, // Only accessible via tools
 };
 

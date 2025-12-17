@@ -19,7 +19,7 @@ const propSchema = z.object({
 
 export const widgetMetadata: WidgetMetadata = {
   description: "Display table data in a formatted table view",
-  inputs: propSchema,
+  props: propSchema,
   exposeAsTool: false,
 };
 

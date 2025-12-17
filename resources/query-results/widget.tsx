@@ -26,7 +26,7 @@ type QueryResultsProps = z.infer<typeof propSchema>;
 export const widgetMetadata: WidgetMetadata = {
   description:
     "Display SQL query results in an interactive table with sorting and filtering",
-  inputs: propSchema,
+  props: propSchema,
   exposeAsTool: false,
 };
 
