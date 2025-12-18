@@ -138,6 +138,7 @@ This server demonstrates the power of [mcp-use](https://github.com/mcp-use/mcp-u
 │   ├── components/         # Reusable UI components
 │   ├── schema-explorer/    # Schema explorer widget
 │   ├── table-viewer/       # Table viewer widget
+│   ├── supabase-status/    # Display Supabase status for a certain time window
 │   └── query-results/      # Query results widget
 └── package.json            # Dependencies including [mcp-use](https://github.com/mcp-use/mcp-use)
 ```
